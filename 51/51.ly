@@ -34,6 +34,7 @@ piccolo =  \relative do'' {
 saxTenorUn = \transpose sib, do \piccolo
 trumpetUn =  \transpose sib do \piccolo
 saxAltoUn =  \transpose mib do \piccolo
+tromboneUn = \transpose do'' do \piccolo
 
 \book {
   \bookOutputSuffix "trumpet1"
@@ -42,6 +43,21 @@ saxAltoUn =  \transpose mib do \piccolo
       instrumentName = "Trompette 1"
       midiInstrument = "trumpet"
     } \trumpetUn
+    \layout { }
+    \midi {
+      \tempo 4=140
+    }
+  }
+}
+
+\book {
+  \bookOutputSuffix "trombone"
+  \score {
+    \new Staff \with {
+      \clef F
+      instrumentName = "Trombone"
+      midiInstrument = "trombone"
+    } \tromboneUn
     \layout { }
     \midi {
       \tempo 4=140
