@@ -101,7 +101,8 @@ trumpetQuatre = \transpose sib fa \trumpetDeux
 tubaDeux = \transpose sib fa \tuba
 saxAltoTrois =  \transpose lab sib \trumpetUn
 saxAltoQuatre =  \transpose lab sib \trumpetDeux
-
+tromboneUn = \transpose do'' fa \trumpetDeux
+tromboneDeux = \transpose do' fa \tuba
 
 \book {
   \bookOutputSuffix "trumpet3"
@@ -190,6 +191,36 @@ saxAltoQuatre =  \transpose lab sib \trumpetDeux
     }
   }
 }
+
+  \book {
+    \bookOutputSuffix "trombone 1"
+    \score {
+      \new Staff \with {
+        \clef F
+        instrumentName = "Trombone 1"
+        midiInstrument = "trombone"
+      } \tromboneUn
+      \layout { }
+      \midi {
+        \tempo 4=140
+      }
+    }
+  }
+  
+  \book {
+    \bookOutputSuffix "trombone 2"
+    \score {
+      \new Staff \with {
+        \clef F
+        instrumentName = "Trombone 2"
+        midiInstrument = "trombone"
+      } \tromboneDeux
+      \layout { }
+      \midi {
+        \tempo 4=140
+      }
+    }
+  }
 
 \book {
   \paper {
