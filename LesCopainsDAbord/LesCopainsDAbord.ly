@@ -49,7 +49,9 @@ saxAltoDeux =  \transpose mib do  \relative do'' {
   \global
   \voixDeuxCommon { si4 si re si | } \voixDeuxFin
 }
-
+  tromboneUn = \transpose do'' do \piccolo
+  
+  
 \book {
   \bookOutputSuffix "trumpet1"
   \score {
@@ -77,6 +79,23 @@ saxAltoDeux =  \transpose mib do  \relative do'' {
     }
   }
 }
+
+ 
+  \book {
+    \bookOutputSuffix "trombone"
+    \score {
+      \new Staff \with {
+        \clef F
+        instrumentName = "Trombone"
+        midiInstrument = "trombone"
+      } \tromboneUn
+      \layout { }
+      \midi {
+        \tempo 4=140
+      }
+    }
+  }
+  
 
 \book {
   \bookOutputSuffix "sax_alto1"
