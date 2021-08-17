@@ -48,15 +48,15 @@ melody = {
     {
       \break \mark \markup \bold \box "Long Tones"
 
-      | <bes, ges'>1~
-      | <bes ges'>2 <a f'> | <bes f'>2. <des aes'>4 | <es ges>1 |
-      | <es ges>1 | <es f> |
+      | <bes ges>1~
+      | <bes ges>2 <a f> | <bes f>2. <des aes>4 | <es ges,>1 |
+      | <es ges,>1 | <es f,> |
     }
 
 
       \break \mark \markup \bold \box "Hits"
     \repeat volta 2 {
-      | f'8
+      | f8
       des des16 des r8 r2 | f8 des des16 des r8 r2 |
       | f8 des des16 des r8 r2 |
     }
@@ -256,9 +256,9 @@ naturalizeMusic =
 }
 
 
-trumpetUn =  \transpose bes c' \melody
-trumpetDeux =  \transpose bes c' \tenor
-trumpetTrois =  \transpose bes c'' \bass
+trumpetUn =  \transpose des c \melody
+trumpetDeux =  \transpose des c \tenor
+trumpetTrois =  \transpose des c'' \bass
 
 \book {
    \bookOutputSuffix "SiB"
@@ -276,9 +276,9 @@ trumpetTrois =  \transpose bes c'' \bass
   }
 }
 
-saxAltoUn =  \transpose ees c' \melody
-saxAltoDeux =  \transpose ees c' \tenor
-saxAltoTrois =  \transpose ees c'' \bass
+saxAltoUn =  \transpose ges c' \melody
+saxAltoDeux =  \transpose ges c' \tenor
+saxAltoTrois =  \transpose ges c'' \bass
 
 
 \book {
@@ -286,7 +286,7 @@ saxAltoTrois =  \transpose ees c'' \bass
   \paper {
 
   }
-  \header { poet = "Trompettes/Sax Sib/Trombone/Clarinette/Cor Iranien" }
+  \header { poet = "Sax Alto/Sax Baryton" }
   \score {
     <<
       \new Staff \saxAltoUn
@@ -296,6 +296,34 @@ saxAltoTrois =  \transpose ees c'' \bass
     >>
   }
 }
+
+PiccoloUn =  \transpose ees c' \melody
+PiccoloDeux =  \transpose ees c' \tenor
+PiccoloTrois =  \transpose ees c'' \bass
+
+TromboneUn =  \transpose ees' c \melody
+TromboneDeux =  \transpose ees' c \tenor
+TromboneTrois =  \transpose ees c \bass
+
+\book {
+   \bookOutputSuffix "UT"
+  \paper {
+
+  }
+  \header { poet = "UT" }
+  \score {
+    <<
+      \new Staff \PiccoloUn
+      \new Staff \PiccoloDeux
+      \new Staff \PiccoloTrois
+ 
+
+    >>
+  }
+}
+
+
+
 
 \book {
   \bookOutputSuffix "trumpet1"
@@ -336,5 +364,68 @@ saxAltoTrois =  \transpose ees c'' \bass
     \midi {
       \tempo 4=140
     }
+  }
+}
+
+  \book {
+    \bookOutputSuffix "trombone1"
+    \score {
+      \new Staff \with {
+        \clef F
+        instrumentName = "Trombone"
+        midiInstrument = "trombone"
+      } \TromboneUn
+      \layout { }
+      \midi {
+        \tempo 4=140
+      }
+    }
+  }
+  
+    \book {
+    \bookOutputSuffix "trombone2"
+    \score {
+      \new Staff \with {
+        \clef F
+        instrumentName = "Trombone 2"
+        midiInstrument = "trombone"
+      } \TromboneDeux
+      \layout { }
+      \midi {
+        \tempo 4=140
+      }
+    }
+  }
+  
+  
+    \book {
+    \bookOutputSuffix "trombone3"
+    \score {
+      \new Staff \with {
+        \clef F
+        instrumentName = "Trombone 3"
+        midiInstrument = "trombone"
+      } \TromboneTrois
+      \layout { }
+      \midi {
+        \tempo 4=140
+      }
+    }
+  }
+  
+  \book {
+   \bookOutputSuffix "Trombone"
+  \paper {
+
+  }
+  \header { poet = "Trombone" }
+  \score {
+    <<
+      \new Staff \TromboneUn
+      \new Staff \TromboneDeux
+      \new Staff \TromboneTrois
+ 
+
+    >>
   }
 }
