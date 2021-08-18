@@ -33,7 +33,7 @@ r2 r2 r2
 
 trumpetUn =  \transpose sib do' \piccolo
 saxAltoUn =  \transpose mib do' \piccolo
-
+tromboneUn = \transpose do' do \piccolo
 
 
 \book {
@@ -49,6 +49,22 @@ saxAltoUn =  \transpose mib do' \piccolo
     }
   }
 }
+
+  
+  \book {
+    \bookOutputSuffix "trombone"
+    \score {
+      \new Staff \with {
+        \clef F
+        instrumentName = "Trombone"
+        midiInstrument = "trombone"
+      } \tromboneUn
+      \layout { }
+      \midi {
+        \tempo 4=140
+      }
+    }
+  }
 
 \book {
   \bookOutputSuffix "piccolo"
@@ -77,5 +93,3 @@ saxAltoUn =  \transpose mib do' \piccolo
     }
   }
 }
-
-
